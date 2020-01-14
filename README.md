@@ -2,4 +2,4 @@
 
 ![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
 
-base-apparel-coming-soon-mels-version.netlify.com
+https://base-apparel-coming-soon-mels-version.netlify.com
