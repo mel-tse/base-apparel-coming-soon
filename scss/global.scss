@@ -10,16 +10,28 @@ p {
 
 body {
     background: $linearwhite;
+    
 }
 
 .logo {
     height: 20px;
+    width: 90px;
     padding: 1em;
+    @media only screen and (min-width: 1000px) {
+        position: absolute;
+            left: 5%;
+            top: 10%;
+      }
 }
 
 // Container
 .container {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: 1000px) {
+        flex-direction: row;
+      }
 }
 
 // Hero
@@ -29,17 +41,70 @@ body {
     height: 280px;
     background-repeat: no-repeat;
     background-size: cover;
+    @media only screen and (min-width: 700px) {
+        background-image: url(../images/hero-desktop.jpg);
+        background-position: inherit;
+        height: 30%;
+      }
+      @media only screen and (min-width: 1000px) {
+        background-position: center;
+        height: 100%;
+        width: 50%;
+        order: 2;
+      }
 }
 
 //Text 
 .text {
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
-    padding: 0 2em 0 2em;
     flex-direction: column;
     display: flex;
     justify-content: space-evenly;
-    height: 50%;
+    height: 70%;
+    justify-content: flex-start;
+    position: relative;
+    @media only screen and (min-width: 1000px) {
+        height: 100%;
+        width: 50%;
+        text-align: initial;
+        justify-content: center;
+        
+      }
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: $red;
+        height: 30%;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+        width: 100%;
+        opacity: .1;
+        top: 0;
+        left: 0;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: rebeccapurple;
+        height: 16%;
+        clip-path: polygon(0 0, 100% 0, 100% 14%, 0 100%);
+        width: 100%;
+        opacity: .1;
+        bottom: 0;
+        left: 0;
+        transform: rotate(180deg);
+    }
+    .text-container {
+        padding: 5em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @media only screen and (min-width: 1000px) {
+            height: 50%;
+          }
+    }
     h1 {
         font-weight: $fontlight;
         text-transform: uppercase;
@@ -66,13 +131,20 @@ body {
     align-items: center;
     border: 1px solid $red;
     border-radius: 30px;
+    align-self: center;
+    width: 375px;
+    @media only screen and (min-width: 1000px) {
+        align-self: end;
+      }
+    &:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
     &__text {
-        padding-left: 20px;
+       padding-left: 20px;
     }
     &__rightarrow {
         padding: 15px 27px 15px 27px;
         border-radius: 27px;
         background: $linearpink;
-
     }
 }
